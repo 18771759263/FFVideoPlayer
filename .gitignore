@@ -1,0 +1,12 @@
+*.pdb
+*.ilk
+*.tlog
+*.log
+*.obj
+*.pch
+*.idb
+*.suo
+*.VC.db
+*.ipch
+*.dll
+*.exe
