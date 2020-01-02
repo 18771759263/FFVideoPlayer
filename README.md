@@ -3,4 +3,7 @@
 
 开发环境
     VS2017, Qt5.12.4, Win10-64 , FFmpeg_4.2.1_Win64
+    
+
+博客专栏：https://blog.csdn.net/yao_hou/category_9275800.html
 
