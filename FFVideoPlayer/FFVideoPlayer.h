@@ -29,6 +29,7 @@ public:
 	void closeEvent(QCloseEvent * e);
 	void resizeEvent(QResizeEvent *e);  //窗口发生变化时
 	void mouseDoubleClickEvent(QMouseEvent*);  //双击全屏
+	void mousePressEvent(QMouseEvent *event);
 
 private:
 	void fullShow();

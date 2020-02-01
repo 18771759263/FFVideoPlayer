@@ -68,6 +68,7 @@ void FFVideoPlayer::initUI()
 	setButtonBackImage(ui.btnPlayVideo, "./Resources/play.png");
 	setButtonBackImage(ui.btnSetVolume, "./Resources/volume.png");
 	setButtonBackImage(ui.btnFullScreen, "./Resources/fullscreen.png");
+	setButtonBackImage(ui.btnCutImage, "./Resources/cutimage.png");
 }
 
 void FFVideoPlayer::allConnect()
@@ -232,6 +233,7 @@ void FFVideoPlayer::resizeEvent(QResizeEvent *e)
 		ui.btnSetVolume->move(this->width() * 4 / 5, this->height() - 60);
 		ui.sliderVolume->move(this->width() * 4 / 5 + 31, this->height() - 60);
 		ui.btnFullScreen->move(this->width() - 40, this->height() - 60);
+		ui.btnCutImage->move(this->width() * 4 / 5 - 40, this->height() - 60);
 	}
 }
 
@@ -277,6 +279,7 @@ void FFVideoPlayer::fullShow()
 	ui.btnSetVolume->hide();
 	ui.sliderVolume->hide();
 	ui.btnFullScreen->hide();
+	ui.btnCutImage->hide();
 }
 
 /**
@@ -293,6 +296,7 @@ void FFVideoPlayer::normalShow()
 	ui.btnSetVolume->show();
 	ui.sliderVolume->show();
 	ui.btnFullScreen->show();
+	ui.btnCutImage->show();
 }
 
 //菜单--打开网络流
@@ -355,4 +359,16 @@ void FFVideoPlayer::slotPushStream(QString address)
 void FFVideoPlayer::GetSourceCode()
 {
 	QDesktopServices::openUrl(QUrl(QString("https://github.com/linghuzhangmen/FFVideoPlayer.git")));
+}
+
+void FFVideoPlayer::mousePressEvent(QMouseEvent *event)
+{
+	if (event->button() == Qt::RightButton)
+	{
+		QMenu menu;
+		QAction *ac1 = menu.addAction(QString::fromLocal8Bit("打开本地视频"));
+		QAction *ac2 = menu.addAction(QString::fromLocal8Bit("查看视频信息"));
+		connect(ac1, SIGNAL(triggered()), this, SLOT(OpenLocalVideo()));
+		menu.exec(QCursor::pos());
+	}
 }

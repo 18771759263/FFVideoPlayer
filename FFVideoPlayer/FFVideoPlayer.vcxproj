@@ -125,6 +125,7 @@
     <ClCompile Include="MyLog.cpp" />
     <ClCompile Include="NetStreamDlg.cpp" />
     <ClCompile Include="NetStreamThread.cpp" />
+    <ClCompile Include="StreamInfoDlg.cpp" />
     <ClCompile Include="VideoWidget.cpp" />
     <ClCompile Include="AudioPlay.cpp" />
     <ClCompile Include="MySlider.cpp" />
@@ -137,6 +138,7 @@
     <QtUic Include="AboutDlg.ui" />
     <QtUic Include="FFVideoPlayer.ui" />
     <QtUic Include="NetStreamDlg.ui" />
+    <QtUic Include="StreamInfoDlg.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="FFVideoPlayer.qrc" />
@@ -170,6 +172,12 @@
       <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB</Define>
     </QtMoc>
     <ClInclude Include="MyLog.h" />
+    <QtMoc Include="StreamInfoDlg.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\log4cplus\include;.\FFmpeg4.2.1_Win64\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtWidgets</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\log4cplus\include;.\FFmpeg4.2.1_Win64\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtWidgets</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;_MBCS</Define>
+    </QtMoc>
     <ClInclude Include="VideoThread.h" />
     <QtMoc Include="MySlider.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtWidgets</IncludePath>

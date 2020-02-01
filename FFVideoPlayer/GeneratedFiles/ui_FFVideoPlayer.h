@@ -40,6 +40,7 @@ public:
     QPushButton *btnFullScreen;
     MySlider *timeSlider;
     QPushButton *btnSetVolume;
+    QPushButton *btnCutImage;
     QMenuBar *menuBar;
     QMenu *menu_File;
     QMenu *menu_Help;
@@ -122,6 +123,9 @@ public:
         btnSetVolume = new QPushButton(centralWidget);
         btnSetVolume->setObjectName(QString::fromUtf8("btnSetVolume"));
         btnSetVolume->setGeometry(QRect(600, 455, 30, 30));
+        btnCutImage = new QPushButton(centralWidget);
+        btnCutImage->setObjectName(QString::fromUtf8("btnCutImage"));
+        btnCutImage->setGeometry(QRect(550, 455, 30, 30));
         FFVideoPlayerClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(FFVideoPlayerClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -160,6 +164,7 @@ public:
         btnPlayVideo->setText(QString());
         btnFullScreen->setText(QString());
         btnSetVolume->setText(QString());
+        btnCutImage->setText(QString());
         menu_File->setTitle(QApplication::translate("FFVideoPlayerClass", "\346\226\207\344\273\266", nullptr));
         menu_Help->setTitle(QApplication::translate("FFVideoPlayerClass", "\345\270\256\345\212\251", nullptr));
         menu_Set->setTitle(QApplication::translate("FFVideoPlayerClass", "\350\256\276\347\275\256", nullptr));
